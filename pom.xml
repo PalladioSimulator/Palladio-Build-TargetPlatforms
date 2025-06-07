@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.palladiosimulator</groupId>
+	<artifactId>palladio-target-platforms</artifactId>
+	<version>0.1.0</version>
+
+	<name>Palladio Maven Tycho Target Platforms</name>
+	<description>Shared target platforms for Tycho builds of Palladio.</description>
+	<url>http://www.palladiosimulator.org</url>
+	<packaging>pom</packaging>
+
+	<licenses>
+		<license>
+			<name>The Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<name>Nicolas Boltz</name>
+			<email>boltz@kit.edu</email>
+			<organization>Karlsruhe Institute of Technology (KIT), Germany</organization>
+			<organizationUrl>http://kit.edu</organizationUrl>
+		</developer>
+		<developer>
+			<name>Ralf Sieger</name>
+			<email>sieger@fzi.de</email>
+			<organization>FZI Research Center for Information Technology, Germany</organization>
+			<organizationUrl>http://www.fzi.de</organizationUrl>
+		</developer>
+	</developers>
+	
+	<scm>
+		<connection>scm:git:git://github.com/palladiosimulator/palladio-build-targetplatforms.git</connection>
+		<developerConnection>scm:git:ssh://github.com/palladiosimulator/palladio-build-targetplatforms.git</developerConnection>
+		<url>http://github.com/palladiosimulator/palladio-build-targetplatforms/tree/master</url>
+	</scm>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>1.6.13</version>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>ossrh</serverId>
+					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+					<autoReleaseAfterClose>true</autoReleaseAfterClose>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<profiles>
+
+		<!-- Build configuration of project itself -->
+		<profile>
+			<id>local-build-deployable</id>
+			<!-- activate this profile explicitly by adding -Plocal-build-deployable to the maven command -->
+			<distributionManagement>
+				<snapshotRepository>
+					<id>ossrh</id>
+					<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+				</snapshotRepository>
+				<repository>
+					<id>ossrh</id>
+					<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+				</repository>
+			</distributionManagement>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>1.6</version>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+						<configuration>
+							<gpgArguments>
+								<arg>--pinentry-mode</arg>
+								<arg>loopback</arg>
+							</gpgArguments>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+		<profile>
+			<id>local-build</id>
+			<activation>
+				<file>
+					<exists>.maven_enable_local-build</exists>
+				</file>
+			</activation>
+			<properties>
+				<tycho.version>2.7.5</tycho.version>
+			</properties>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>build-helper-maven-plugin</artifactId>
+						<version>3.6.1</version>
+						<executions>
+							<execution>
+								<id>attach-artifacts</id>
+								<phase>package</phase>
+								<goals>
+									<goal>attach-artifact</goal>
+								</goals>
+								<configuration>
+									<artifacts>
+										<artifact>
+											<file>targetPlatforms/palladio-2020-12.target</file>
+											<type>target</type>
+											<classifier>palladio-2020-12</classifier>
+										</artifact>
+										<artifact>
+											<file>targetPlatforms/palladio-2021-12.target</file>
+											<type>target</type>
+											<classifier>palladio-2021-12</classifier>
+										</artifact>
+										<artifact>
+											<file>targetPlatforms/palladio-2022-12.target</file>
+											<type>target</type>
+											<classifier>palladio-2022-12</classifier>
+										</artifact>
+										<artifact>
+											<file>targetPlatforms/palladio-2023-03.target</file>
+											<type>target</type>
+											<classifier>palladio-2023-03</classifier>
+										</artifact>
+										<artifact>
+											<file>targetPlatforms/palladio-2023-06.target</file>
+											<type>target</type>
+											<classifier>palladio-2023-06</classifier>
+										</artifact>
+										<artifact>
+											<file>targetPlatforms/palladio-2023-09.target</file>
+											<type>target</type>
+											<classifier>palladio-2023-09</classifier>
+										</artifact>
+									</artifacts>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.eclipse.tycho.extras</groupId>
+						<artifactId>target-platform-validation-plugin</artifactId>
+						<version>${tycho.version}</version>
+						<executions>
+							<execution>
+								<id>validate-targets</id>
+								<phase>validate</phase>
+								<goals>
+									<goal>validate-target-platform</goal>
+								</goals>
+							</execution>
+						</executions>
+						<configuration>
+							<checkDependencies>true</checkDependencies>
+							<checkProvisioning>true</checkProvisioning>
+							<targetFiles>
+								<targetFile>targetPlatforms/palladio-2023-09.target</targetFile>
+								<targetFile>targetPlatforms/palladio-2023-06.target</targetFile>
+								<targetFile>targetPlatforms/palladio-2023-03.target</targetFile>
+								<targetFile>targetPlatforms/palladio-2022-12.target</targetFile>
+								<targetFile>targetPlatforms/palladio-2021-12.target</targetFile>
+								<targetFile>targetPlatforms/palladio-2020-12.target</targetFile>
+							</targetFiles>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>
