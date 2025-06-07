@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.8"?><target name="Palladio 2020-12">
+	<locations>
+		<!-- ========== Eclipse Modeling ========== -->
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
+			<repository location="http://download.eclipse.org/releases/2020-12/202012161000"/>
+			<unit id="org.eclipse.platform.feature.group" version="4.18.0.v20201202-1800"/>
+			<unit id="org.eclipse.epp.mpc.feature.group" version="1.9.0.v20201125-0811"/>
+			<unit id="org.eclipse.e4.core.tools.feature.feature.group" version="4.18.0.v20201026-0947"/>
+			<unit id="org.eclipse.egit.feature.group" version="5.10.0.202012080955-r"/>
+			<unit id="org.eclipse.emf.cdo.epp.feature.group" version="4.12.0.v20201209-0820"/>
+			<unit id="org.eclipse.emf.compare.ide.ui.source.feature.group" version="3.3.13.202011201248"/>
+			<unit id="org.eclipse.emf.compare.source.feature.group" version="3.3.13.202011201248"/>
+			<unit id="org.eclipse.emf.compare.diagram.sirius.source.feature.group" version="3.3.13.202011201248"/>
+			<unit id="org.eclipse.emf.compare.egit.feature.group" version="3.3.13.202011201248"/>
+			<unit id="org.eclipse.emf.ecoretools.design.feature.group" version="3.3.3.202010261352"/>
+			<unit id="org.eclipse.emf.ecp.emfforms.sdk.feature.feature.group" version="1.25.0.20200831-0551"/>
+			<unit id="org.eclipse.emf.parsley.sdk.feature.group" version="1.13.0.v20201130-1005"/>
+			<unit id="org.eclipse.emf.parsley.sdk.source.feature.group" version="1.13.0.v20201130-1005"/>
+			<unit id="org.eclipse.emf.query.sdk.feature.group" version="1.12.0.201805030653"/>
+			<unit id="org.eclipse.emf.sdk.feature.group" version="2.24.0.v20200917-1439"/>
+			<unit id="org.eclipse.emf.transaction.sdk.feature.group" version="1.12.0.201805140824"/>
+			<unit id="org.eclipse.emf.validation.sdk.feature.group" version="1.12.2.202008210805"/>
+			<unit id="org.eclipse.gef.sdk.feature.group" version="3.11.0.201606061308"/>
+			<unit id="org.eclipse.gmf.runtime.sdk.feature.group" version="1.13.0.202004160913"/>
+			<unit id="org.eclipse.jdt.feature.group" version="3.18.600.v20201202-1800"/>
+			<unit id="org.eclipse.mylyn.wikitext_feature.feature.group" version="3.0.38.202008172112"/>
+			<unit id="org.eclipse.ocl.all.sdk.feature.group" version="5.13.0.v20201208-2229"/>
+			<unit id="org.eclipse.pde.feature.group" version="3.14.600.v20201202-1800"/>
+			<unit id="org.eclipse.sdk.feature.group" version="4.18.0.v20201202-1800"/>
+			<unit id="org.eclipse.uml2.sdk.feature.group" version="5.5.1.v20200302-1312"/>
+			<unit id="org.eclipse.xsd.sdk.feature.group" version="2.24.0.v20200917-1343"/>
+			<unit id="org.eclipse.tips.feature.feature.group" version="0.2.1200.v20201120-1551"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
+			<repository location="http://download.eclipse.org/releases/2020-12/202012161000"/>
+			<unit id="org.eclipse.emf.mwe2.launcher.feature.group" version="2.12.0.v20201119-2018"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
+			<repository location="http://download.eclipse.org/tools/orbit/downloads/2020-12/"/>
+			<unit id="javax.xml.bind" version="2.2.0.v201105210648"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
+			<repository location="https://updatesite.mdsd.tools/ecore-workflow/releases/0.3.0/"/>
+			<unit id="tools.mdsd.ecoreworkflow.mwe2lib.feature.feature.group" version="0.2.0.202101041551"/>
+		</location>
+
+		<!-- ========== Palladio License Feature ========== -->
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
+			<repository location="https://updatesite.palladio-simulator.com/palladio-supporting-branding/releases/latest/"/>
+			<unit id="org.palladiosimulator.branding.feature.feature.group" version="2.0.0"/>
+			<unit id="org.palladiosimulator.branding.feature.source.feature.group" version="2.0.0"/>
+			<unit id="org.palladiosimulator.license.feature.group" version="1.0.0"/>
+			<unit id="org.palladiosimulator.license.epl2.feature.group" version="1.0.0"/>
+		</location>
+	</locations>
+</target>
