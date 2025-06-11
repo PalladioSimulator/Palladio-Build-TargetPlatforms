@@ -2,8 +2,6 @@
 
 This repository provides a collection of shared target platform definitions for Tycho-based builds of Palladio. Each target platform bundles a specific Eclipse Modeling release alongside Palladio-specific branding and license features, ensuring a consistent development environment across projects.
 
----
-
 ## Available Target Platforms
 
 Each of the following target platforms corresponds to an Eclipse Modeling release. The numeric suffix (e.g., 2023-09)
@@ -20,8 +18,6 @@ Release version that the platform is based on.
 | `palladio-2023-09`   | 2023‑09                  |
 
 You can find the `.target` definitions in the [`targetPlatforms/`](targetPlatforms/) directory.
-
----
 
 ## Usage
 
