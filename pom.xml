@@ -8,7 +8,7 @@
 	<version>0.1.0-SNAPSHOT</version>
 
 	<name>Palladio Maven Tycho Target Platforms</name>
-	<description>Shared target platforms for Tycho builds of Palladio.</description>
+	<description>Shared target platforms for Tycho-based builds of Palladio.</description>
 	<url>http://www.palladiosimulator.org</url>
 	<packaging>pom</packaging>
 
