@@ -4,7 +4,7 @@ This repository provides a collection of shared target platform definitions for 
 
 ## Available Target Platforms
 
-Each of the following target platforms corresponds to an Eclipse Modeling release. The numeric suffix (e.g., 2023-09)
+Each of the following target platforms corresponds to an Eclipse Modeling release. The numeric suffix (e.g., `2023-09`)
 in the platform name (`palladio-YYYY-MM`) indicates the the year and month of the respective Eclipse Simultaneous
 Release version that the platform is based on.
 
