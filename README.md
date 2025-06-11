@@ -26,12 +26,12 @@ To use one of the target platforms in your project, add a `<location>` element w
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde version="3.8"?><target name="My Palladio Project">
-  <locations>
-    <!-- Add this location element -->
-    <location type="Target" uri="mvn:org.palladiosimulator:palladio-target-platforms:{version}:target:palladio-{YYYY-MM}"/>
+    <locations>
+        <!-- Add this location element -->
+        <location type="Target" uri="mvn:org.palladiosimulator:palladio-target-platforms:{version}:target:palladio-{YYYY-MM}"/>
 
-    <!-- You may add other locations here -->
-  </locations>
+        <!-- You may add other locations here -->
+    </locations>
 </target>
 ```
 Replace `{version}` with the released version of this project (e.g., `0.1.0`) and `{YYYY-MM}` with the year and month of the desired target platform.
