@@ -43,3 +43,5 @@ Replace `{version}` with the released version of this project (e.g., `0.1.0`) an
 ```
 
 For a complete implementation example showing the usage of nested `.target` references, see Tycho's [target reference integration test](https://github.com/eclipse-tycho/tycho/tree/main/tycho-its/projects/target.references/target.refs).
+
+> **Note for Eclipse IDE:** To use nested `.target` references within the Eclipse IDE (e.g., via PDE's Target Editor), make sure you are using Eclipse IDE 2022‑03 (version 4.23) or newer. In addition, referencing a Maven-hosted target platform using the `mvn:` URI syntax requires m2e (m2eclipse) with PDE (Plug-in Development Environment) integration. See [Eclipse 4.23 New & Noteworthy – Reference an existing target inside another one](https://eclipse.dev/eclipse/news/4.23/pde.html#pde-editor-include) for details.
