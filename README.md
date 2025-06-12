@@ -6,7 +6,7 @@ This repository provides a collection of shared target platform definitions for 
 
 Each of the following target platforms corresponds to an Eclipse Modeling release. The numeric suffix (e.g., `2023-09`)
 in the target platform name (`palladio-YYYY-MM`) indicates the the year and month of the respective Eclipse Simultaneous
-Release version that the platform is based on.
+Release version that the target platform is based on.
 
 | Target Platform Name | Eclipse Modeling Release |
 | -------------------- | ------------------------ |
