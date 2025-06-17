@@ -34,7 +34,7 @@ To use one of the target platforms in your project, add a `<location>` element w
     </locations>
 </target>
 ```
-Replace `{version}` with the released version of this project (e.g., `0.1.0`) and `{YYYY-MM}` with the year and month of the desired target platform.
+Replace `{version}` with the latest released version of this project (e.g., `0.1.0`) and `{YYYY-MM}` with the year and month of the desired target platform.
 
 **Example** (using version `0.1.0` and the `palladio-2023-09` target platform):
 
