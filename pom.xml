@@ -9,7 +9,7 @@
 
 	<name>Palladio Maven Tycho Target Platforms</name>
 	<description>Shared target platforms for Tycho-based builds of Palladio.</description>
-	<url>https://www.palladiosimulator.org</url>
+	<url>https://palladio-simulator.com</url>
 	<packaging>pom</packaging>
 
 	<licenses>
