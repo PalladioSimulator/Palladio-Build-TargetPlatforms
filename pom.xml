@@ -97,7 +97,7 @@
 				</file>
 			</activation>
 			<properties>
-				<tycho.version>2.7.5</tycho.version>
+				<tycho.version>4.0.13</tycho.version>
 			</properties>
 			<build>
 				<plugins>
@@ -144,6 +144,11 @@
 											<type>target</type>
 											<classifier>palladio-2023-09</classifier>
 										</artifact>
+										<artifact>
+											<file>targetPlatforms/palladio-2023-12.target</file>
+											<type>target</type>
+											<classifier>palladio-2023-12</classifier>
+										</artifact>
 									</artifacts>
 								</configuration>
 							</execution>
@@ -166,6 +171,7 @@
 							<checkDependencies>true</checkDependencies>
 							<checkProvisioning>true</checkProvisioning>
 							<targetFiles>
+								<targetFile>targetPlatforms/palladio-2023-12.target</targetFile>
 								<targetFile>targetPlatforms/palladio-2023-09.target</targetFile>
 								<targetFile>targetPlatforms/palladio-2023-06.target</targetFile>
 								<targetFile>targetPlatforms/palladio-2023-03.target</targetFile>
