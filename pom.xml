@@ -115,21 +115,6 @@
 								<configuration>
 									<artifacts>
 										<artifact>
-											<file>targetPlatforms/palladio-2020-12.target</file>
-											<type>target</type>
-											<classifier>palladio-2020-12</classifier>
-										</artifact>
-										<artifact>
-											<file>targetPlatforms/palladio-2021-12.target</file>
-											<type>target</type>
-											<classifier>palladio-2021-12</classifier>
-										</artifact>
-										<artifact>
-											<file>targetPlatforms/palladio-2022-12.target</file>
-											<type>target</type>
-											<classifier>palladio-2022-12</classifier>
-										</artifact>
-										<artifact>
 											<file>targetPlatforms/palladio-2023-03.target</file>
 											<type>target</type>
 											<classifier>palladio-2023-03</classifier>
@@ -148,6 +133,11 @@
 											<file>targetPlatforms/palladio-2023-12.target</file>
 											<type>target</type>
 											<classifier>palladio-2023-12</classifier>
+										</artifact>
+										<artifact>
+											<file>targetPlatforms/palladio-2024-06.target</file>
+											<type>target</type>
+											<classifier>palladio-2024-06</classifier>
 										</artifact>
 									</artifacts>
 								</configuration>
@@ -171,13 +161,11 @@
 							<checkDependencies>true</checkDependencies>
 							<checkProvisioning>true</checkProvisioning>
 							<targetFiles>
+								<targetFile>targetPlatforms/palladio-2024-06.target</targetFile>
 								<targetFile>targetPlatforms/palladio-2023-12.target</targetFile>
 								<targetFile>targetPlatforms/palladio-2023-09.target</targetFile>
 								<targetFile>targetPlatforms/palladio-2023-06.target</targetFile>
 								<targetFile>targetPlatforms/palladio-2023-03.target</targetFile>
-								<targetFile>targetPlatforms/palladio-2022-12.target</targetFile>
-								<targetFile>targetPlatforms/palladio-2021-12.target</targetFile>
-								<targetFile>targetPlatforms/palladio-2020-12.target</targetFile>
 							</targetFiles>
 						</configuration>
 					</plugin>
