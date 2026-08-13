@@ -139,6 +139,11 @@
 											<type>target</type>
 											<classifier>palladio-2024-06</classifier>
 										</artifact>
+										<artifact>
+											<file>targetPlatforms/palladio-2025-12.target</file>
+											<type>target</type>
+											<classifier>palladio-2025-12</classifier>
+										</artifact>
 									</artifacts>
 								</configuration>
 							</execution>
@@ -161,6 +166,7 @@
 							<checkDependencies>true</checkDependencies>
 							<checkProvisioning>true</checkProvisioning>
 							<targetFiles>
+								<targetFile>targetPlatforms/palladio-2025-12.target</targetFile>
 								<targetFile>targetPlatforms/palladio-2024-06.target</targetFile>
 								<targetFile>targetPlatforms/palladio-2023-12.target</targetFile>
 								<targetFile>targetPlatforms/palladio-2023-09.target</targetFile>
