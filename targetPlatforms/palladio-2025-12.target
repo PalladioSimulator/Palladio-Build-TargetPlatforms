@@ -89,6 +89,11 @@
 			     they have three consumers at most, all of them at the edge of the product. -->
 			<unit id="org.apache.commons.text" version="0.0.0"/>
 			<unit id="org.apache.commons.lang3" version="0.0.0"/>
+			<!-- Replaces org.apache.commons.math (v2), which exists in no current release
+			     and was the sole reason for an Orbit 2021-12 location here. Also replaces
+			     the self-wrapped copy that Dependability-ML, SimExp and LIMBO used to pull
+			     from palladio-thirdparty-wrapper. -->
+			<unit id="org.apache.commons.math3" version="0.0.0"/>
 			<!-- The unit test stack. It belongs here rather than in the individual target
 			     definitions because the core requires it - Core-Commons, Core-PCM, SimuCom,
 			     Editors-Commons and Slingshot all mock - and because it used to be served by
@@ -108,13 +113,14 @@
 			<repository location="https://updatesite.mdsd.tools/ecore-workflow/releases/1.2.0/"/>
 			<unit id="tools.mdsd.ecoreworkflow.mwe2lib.feature.feature.group" version="0.0.0"/>
 		</location>
+		<!-- The BPEL designer left the simultaneous release after 2021-12 and the project has
+		     published nothing since, so this is the last release that carries it. The only
+		     location here older than 2025-12. No bundle or feature in the workspace requires
+		     it; it is kept for consumers of this platform outside the workspace, and the
+		     published update site contributes it from the same release independently. -->
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
 			<repository location="https://download.eclipse.org/releases/2021-12/202112081000"/>
 			<unit id="org.eclipse.bpel.feature.feature.group" version="0.0.0"/>
-		</location>
-		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
-			<repository location="https://download.eclipse.org/tools/orbit/downloads/2021-12/"/>
-			<unit id="org.apache.commons.math" version="0.0.0"/>
 		</location>
 
 		<!-- ========== Palladio License Feature ========== -->
