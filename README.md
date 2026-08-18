@@ -37,10 +37,10 @@ To use one of the target platforms in your project, add a `<location>` element w
 
 Replace `{version}` with the latest released version of this project (e.g., `0.1.0`) and `{YYYY-MM}` with the year and month of the desired target platform.
 
-**Example** (using version `6.0.0` and the `palladio-2025-12` target platform):
+**Example** (using version `6.0.1` and the `palladio-2025-12` target platform):
 
 ```xml
-<location type="Target" uri="mvn:org.palladiosimulator:palladio-target-platforms:6.0.0:target:palladio-2025-12"/>
+<location type="Target" uri="mvn:org.palladiosimulator:palladio-target-platforms:6.0.1:target:palladio-2025-12"/>
 ```
 
 For a complete implementation example showing the usage of nested `.target` references, see Tycho's [target reference integration test](https://github.com/eclipse-tycho/tycho/tree/main/tycho-its/projects/target.references/target.refs).
