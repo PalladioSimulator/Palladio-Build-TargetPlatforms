@@ -10,12 +10,12 @@ Release version that the target platform is based on.
 
 | Target Platform Name | Eclipse Modeling Release |
 | -------------------- | ------------------------ |
-| `palladio-2020-12`   | 2020‑12                  |
-| `palladio-2021-12`   | 2021‑12                  |
-| `palladio-2022-12`   | 2022‑12                  |
 | `palladio-2023-03`   | 2023‑03                  |
 | `palladio-2023-06`   | 2023‑06                  |
 | `palladio-2023-09`   | 2023‑09                  |
+| `palladio-2023-12`   | 2023‑12                  |
+| `palladio-2024-06`   | 2024‑06                  |
+| `palladio-2025-12`   | 2025‑12                  |
 
 You can find the `.target` definitions in the [`targetPlatforms/`](targetPlatforms/) directory.
 
@@ -37,10 +37,10 @@ To use one of the target platforms in your project, add a `<location>` element w
 
 Replace `{version}` with the latest released version of this project (e.g., `0.1.0`) and `{YYYY-MM}` with the year and month of the desired target platform.
 
-**Example** (using version `0.1.0` and the `palladio-2023-09` target platform):
+**Example** (using version `6.0.0` and the `palladio-2025-12` target platform):
 
 ```xml
-<location type="Target" uri="mvn:org.palladiosimulator:palladio-target-platforms:0.1.0:target:palladio-2023-09"/>
+<location type="Target" uri="mvn:org.palladiosimulator:palladio-target-platforms:6.0.0:target:palladio-2025-12"/>
 ```
 
 For a complete implementation example showing the usage of nested `.target` references, see Tycho's [target reference integration test](https://github.com/eclipse-tycho/tycho/tree/main/tycho-its/projects/target.references/target.refs).

@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.palladiosimulator</groupId>
 	<artifactId>palladio-target-platforms</artifactId>
-	<version>6.0.0-SNAPSHOT</version>
+	<version>6.0.1-SNAPSHOT</version>
 
 	<name>Palladio Maven Tycho Target Platforms</name>
 	<description>Shared target platforms for Tycho-based builds of Palladio.</description>
@@ -97,7 +97,7 @@
 				</file>
 			</activation>
 			<properties>
-				<tycho.version>2.7.5</tycho.version>
+				<tycho.version>4.0.13</tycho.version>
 			</properties>
 			<build>
 				<plugins>
@@ -115,21 +115,6 @@
 								<configuration>
 									<artifacts>
 										<artifact>
-											<file>targetPlatforms/palladio-2020-12.target</file>
-											<type>target</type>
-											<classifier>palladio-2020-12</classifier>
-										</artifact>
-										<artifact>
-											<file>targetPlatforms/palladio-2021-12.target</file>
-											<type>target</type>
-											<classifier>palladio-2021-12</classifier>
-										</artifact>
-										<artifact>
-											<file>targetPlatforms/palladio-2022-12.target</file>
-											<type>target</type>
-											<classifier>palladio-2022-12</classifier>
-										</artifact>
-										<artifact>
 											<file>targetPlatforms/palladio-2023-03.target</file>
 											<type>target</type>
 											<classifier>palladio-2023-03</classifier>
@@ -143,6 +128,21 @@
 											<file>targetPlatforms/palladio-2023-09.target</file>
 											<type>target</type>
 											<classifier>palladio-2023-09</classifier>
+										</artifact>
+										<artifact>
+											<file>targetPlatforms/palladio-2023-12.target</file>
+											<type>target</type>
+											<classifier>palladio-2023-12</classifier>
+										</artifact>
+										<artifact>
+											<file>targetPlatforms/palladio-2024-06.target</file>
+											<type>target</type>
+											<classifier>palladio-2024-06</classifier>
+										</artifact>
+										<artifact>
+											<file>targetPlatforms/palladio-2025-12.target</file>
+											<type>target</type>
+											<classifier>palladio-2025-12</classifier>
 										</artifact>
 									</artifacts>
 								</configuration>
@@ -166,12 +166,12 @@
 							<checkDependencies>true</checkDependencies>
 							<checkProvisioning>true</checkProvisioning>
 							<targetFiles>
+								<targetFile>targetPlatforms/palladio-2025-12.target</targetFile>
+								<targetFile>targetPlatforms/palladio-2024-06.target</targetFile>
+								<targetFile>targetPlatforms/palladio-2023-12.target</targetFile>
 								<targetFile>targetPlatforms/palladio-2023-09.target</targetFile>
 								<targetFile>targetPlatforms/palladio-2023-06.target</targetFile>
 								<targetFile>targetPlatforms/palladio-2023-03.target</targetFile>
-								<targetFile>targetPlatforms/palladio-2022-12.target</targetFile>
-								<targetFile>targetPlatforms/palladio-2021-12.target</targetFile>
-								<targetFile>targetPlatforms/palladio-2020-12.target</targetFile>
 							</targetFiles>
 						</configuration>
 					</plugin>

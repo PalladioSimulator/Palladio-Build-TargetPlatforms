@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?pde version="3.8"?><target name="Palladio 2023-06">
+<?pde version="3.8"?><target name="Palladio 2024-06">
 	<locations>
 		<!-- ========== Eclipse Modeling ========== -->
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
-			<repository location="https://download.eclipse.org/releases/2023-06/202306141000/"/>
+			<repository location="https://download.eclipse.org/releases/2024-06/202406121000/"/>
 			<unit id="org.eclipse.platform.feature.group" version="0.0.0"/>
 			<unit id="org.eclipse.epp.mpc.feature.group" version="0.0.0"/>
 			<unit id="org.eclipse.e4.core.tools.feature.feature.group" version="0.0.0"/>
@@ -14,17 +14,14 @@
 			<unit id="org.eclipse.emf.compare.diagram.sirius.source.feature.group" version="0.0.0"/>
 			<unit id="org.eclipse.emf.compare.egit.feature.group" version="0.0.0"/>
 			<unit id="org.eclipse.emf.ecoretools.design.feature.group" version="0.0.0"/>
-			<unit id="org.eclipse.emf.ecp.emfforms.sdk.feature.feature.group" version="0.0.0"/>
 			<unit id="org.eclipse.emf.parsley.sdk.feature.group" version="0.0.0"/>
 			<unit id="org.eclipse.emf.parsley.sdk.source.feature.group" version="0.0.0"/>
-			<unit id="org.eclipse.emf.query.sdk.feature.group" version="0.0.0"/>
 			<unit id="org.eclipse.emf.sdk.feature.group" version="0.0.0"/>
 			<unit id="org.eclipse.emf.transaction.sdk.feature.group" version="0.0.0"/>
 			<unit id="org.eclipse.emf.validation.sdk.feature.group" version="0.0.0"/>
 			<unit id="org.eclipse.gef.sdk.feature.group" version="0.0.0"/>
 			<unit id="org.eclipse.gmf.runtime.sdk.feature.group" version="0.0.0"/>
 			<unit id="org.eclipse.jdt.feature.group" version="0.0.0"/>
-			<unit id="org.eclipse.mylyn.wikitext_feature.feature.group" version="0.0.0"/>
 			<unit id="org.eclipse.oomph.setup.feature.group" version="0.0.0"/>
 			<unit id="org.eclipse.ocl.all.sdk.feature.group" version="0.0.0"/>
 			<unit id="org.eclipse.pde.feature.group" version="0.0.0"/>
@@ -33,23 +30,41 @@
 			<unit id="org.eclipse.xsd.sdk.feature.group" version="0.0.0"/>
 			<unit id="org.eclipse.tips.feature.feature.group" version="0.0.0"/>
 			<unit id="org.eclipse.emf.mwe2.launcher.feature.group" version="0.0.0"/>
+			<!-- Required by de.uka.ipd.sdq.workflow.mdsd. Up to 2023-12 this came in
+			     transitively through org.eclipse.emf.parsley.dsl, which no longer
+			     requires it, so it has to be requested explicitly. -->
+			<unit id="org.eclipse.xtext.xtext.generator" version="0.0.0"/>
+			<!-- Dropped out of the Orbit aggregation with 4.30, still shipped by SimRel -->
+			<unit id="com.sun.xml.bind" version="0.0.0"/>
+			<!-- Three features left the simultaneous release after 2023-12 and do not come
+			     back in later ones. Palladio no longer needs any of them:
+			       org.eclipse.emf.query.sdk           - replaced by plain EMF tree walks
+			       org.eclipse.emf.ecp.emfforms.sdk    - only a stale Require-Bundle, no code
+			       org.eclipse.mylyn.wikitext_feature  - never used, only command ids in strings -->
 		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
-			<repository location="https://download.eclipse.org/tools/orbit/downloads/2023-06/"/>
-			<unit id="com.sun.xml.bind" version="0.0.0"/>
-			<unit id="org.junit.jupiter.api" version="0.0.0"/>
-			<unit id="org.junit.jupiter.params" version="0.0.0"/>
-			<unit id="org.junit.jupiter.engine" version="0.0.0"/>
-			<unit id="org.junit.jupiter.migrationsupport" version="0.0.0"/>
-			<unit id="org.junit.platform.commons" version="0.0.0"/>
-			<unit id="org.junit.platform.engine" version="0.0.0"/>
-			<unit id="org.junit.platform.launcher" version="0.0.0"/>
-			<unit id="org.junit.platform.runner" version="0.0.0"/>
-			<unit id="org.junit.platform.suite.api" version="0.0.0"/>
-			<unit id="org.junit.platform.suite.commons" version="0.0.0"/>
-			<unit id="org.junit.platform.suite.engine" version="0.0.0"/>
-			<unit id="org.junit.vintage.engine" version="0.0.0"/>
-			<unit id="org.apiguardian" version="0.0.0"/>
+			<repository location="https://download.eclipse.org/tools/orbit/simrel/orbit-aggregation/release/4.32.0/"/>
+			<unit id="junit-jupiter-api" version="0.0.0"/>
+			<unit id="junit-jupiter-params" version="0.0.0"/>
+			<unit id="junit-jupiter-engine" version="0.0.0"/>
+			<unit id="junit-jupiter-migrationsupport" version="0.0.0"/>
+			<unit id="junit-platform-commons" version="0.0.0"/>
+			<unit id="junit-platform-engine" version="0.0.0"/>
+			<unit id="junit-platform-launcher" version="0.0.0"/>
+			<unit id="junit-platform-runner" version="0.0.0"/>
+			<unit id="junit-platform-suite-api" version="0.0.0"/>
+			<unit id="junit-platform-suite-commons" version="0.0.0"/>
+			<unit id="junit-platform-suite-engine" version="0.0.0"/>
+			<unit id="junit-vintage-engine" version="0.0.0"/>
+			<unit id="org.apiguardian.api" version="0.0.0"/>
+			<!-- Jakarta EE APIs. Both bundles are also available in 1.x variants that still
+			     export the javax.* packages, so the versions have to be pinned explicitly. -->
+			<unit id="jakarta.inject.jakarta.inject-api" version="2.0.1"/>
+			<unit id="jakarta.annotation-api" version="2.1.1"/>
+			<!-- 1.0.5 exports javax.inject and is still required: dagger.internal.Provider
+			     implements both javax.inject.Provider and jakarta.inject.Provider, so the
+			     Dagger runtime does not link without the javax package being present. -->
+			<unit id="jakarta.inject.jakarta.inject-api" version="1.0.5"/>
 		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
 			<repository location="https://updatesite.mdsd.tools/ecore-workflow/releases/1.2.0/"/>

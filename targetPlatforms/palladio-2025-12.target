@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.8"?><target name="Palladio 2025-12">
+	<locations>
+		<!-- ========== Eclipse Modeling ========== -->
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
+			<repository location="https://download.eclipse.org/releases/2025-12/202512101000/"/>
+			<unit id="org.eclipse.platform.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.epp.mpc.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.e4.core.tools.feature.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.egit.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.emf.cdo.sdk.feature.group" version="0.0.0"/>
+			<!-- The .source variants of these three left the release with 2025-12; the
+			     features themselves are still there, so they take their place. -->
+			<unit id="org.eclipse.emf.compare.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.emf.compare.ide.ui.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.emf.compare.diagram.sirius.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.emf.compare.egit.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.emf.ecoretools.design.feature.group" version="0.0.0"/>
+			<!-- org.eclipse.emf.parsley.sdk.source left the release with 2025-12 as well.
+			     It is simply dropped: the SDK feature above is what Palladio builds against. -->
+			<unit id="org.eclipse.emf.parsley.sdk.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.emf.sdk.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.emf.transaction.sdk.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.emf.validation.sdk.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.gef.sdk.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.gmf.runtime.sdk.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.jdt.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.oomph.setup.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.ocl.all.sdk.feature.group" version="0.0.0"/>
+			<!-- Required by ArchitecturalTemplates, EnvironmentalDynamics, Slingshot and the
+			     Scheduler, each of which used to pin its own Eclipse 2023-03 location for it.
+			     The SDK feature subsumes the runtime feature and the plain bundle. -->
+			<unit id="org.eclipse.m2m.qvt.oml.sdk.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.pde.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.sdk.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.uml2.sdk.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.xsd.sdk.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.tips.feature.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.emf.mwe2.launcher.feature.group" version="0.0.0"/>
+			<!-- Required by de.uka.ipd.sdq.workflow.mdsd. Up to 2023-12 this came in
+			     transitively through org.eclipse.emf.parsley.dsl, which no longer
+			     requires it, so it has to be requested explicitly. -->
+			<unit id="org.eclipse.xtext.xtext.generator" version="0.0.0"/>
+			<!-- Replaces org.eclipse.xtext.junit4 and .xbase.junit, which left the release
+			     with 2024-12. The packages were renamed along with the bundles. -->
+			<unit id="org.eclipse.xtext.testing" version="0.0.0"/>
+			<unit id="org.eclipse.xtext.xbase.testing" version="0.0.0"/>
+			<!-- Dropped out of the Orbit aggregation with 4.30, still shipped by SimRel -->
+			<unit id="com.sun.xml.bind" version="0.0.0"/>
+			<!-- Required by org.palladiosimulator.edp2 and SimExp. It used to arrive
+			     transitively and no longer does. The release still carries it under the
+			     old symbolic name; with 2026-06 it is gone and the manifests will have to
+			     move to org.apache.commons.commons-codec. -->
+			<unit id="org.apache.commons.codec" version="0.0.0"/>
+			<!-- Three features left the simultaneous release after 2023-12 and do not come
+			     back in later ones. Palladio no longer needs any of them:
+			       org.eclipse.emf.query.sdk           - replaced by plain EMF tree walks
+			       org.eclipse.emf.ecp.emfforms.sdk    - only a stale Require-Bundle, no code
+			       org.eclipse.mylyn.wikitext_feature  - never used, only command ids in strings -->
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
+			<repository location="https://download.eclipse.org/tools/orbit/simrel/orbit-aggregation/release/4.38.0/"/>
+			<!-- Pinned to the JUnit 5 line. The aggregation carries 5.x and 6.x side by
+			     side, and an unpinned 0.0.0 would silently pull JUnit 6 - a major version
+			     step that has nothing to do with raising the Eclipse release. -->
+			<unit id="junit-jupiter-api" version="5.14.1"/>
+			<unit id="junit-jupiter-params" version="5.14.1"/>
+			<unit id="junit-jupiter-engine" version="5.14.1"/>
+			<unit id="junit-jupiter-migrationsupport" version="5.14.1"/>
+			<unit id="junit-platform-commons" version="1.14.1"/>
+			<unit id="junit-platform-engine" version="1.14.1"/>
+			<unit id="junit-platform-launcher" version="1.14.1"/>
+			<unit id="junit-platform-runner" version="1.14.1"/>
+			<unit id="junit-platform-suite-api" version="1.14.1"/>
+			<unit id="junit-platform-suite-commons" version="1.14.1"/>
+			<unit id="junit-platform-suite-engine" version="1.14.1"/>
+			<unit id="junit-vintage-engine" version="5.14.1"/>
+			<unit id="org.apiguardian.api" version="0.0.0"/>
+			<!-- Jakarta EE APIs. Both bundles are also available in 1.x variants that still
+			     export the javax.* packages, so the versions have to be pinned explicitly. -->
+			<unit id="jakarta.inject.jakarta.inject-api" version="2.0.1"/>
+			<unit id="jakarta.annotation-api" version="2.1.1"/>
+			<!-- 1.0.5 exports javax.inject and is still required: dagger.internal.Provider
+			     implements both javax.inject.Provider and jakarta.inject.Provider, so the
+			     Dagger runtime does not link without the javax package being present. -->
+			<unit id="jakarta.inject.jakarta.inject-api" version="1.0.5"/>
+			<!-- StringEscapeUtils was removed from commons-lang3 and lives in commons-text.
+			     org.apache.commons.io, .csv and org.json are deliberately not listed here:
+			     they have three consumers at most, all of them at the edge of the product. -->
+			<unit id="org.apache.commons.text" version="0.0.0"/>
+			<unit id="org.apache.commons.lang3" version="0.0.0"/>
+			<!-- Replaces org.apache.commons.math (v2), which exists in no current release
+			     and was the sole reason for an Orbit 2021-12 location here. Also replaces
+			     the self-wrapped copy that Dependability-ML, SimExp and LIMBO used to pull
+			     from palladio-thirdparty-wrapper. -->
+			<unit id="org.apache.commons.math3" version="0.0.0"/>
+			<!-- The unit test stack. It belongs here rather than in the individual target
+			     definitions because the core requires it - Core-Commons, Core-PCM, SimuCom,
+			     Editors-Commons and Slingshot all mock - and because it used to be served by
+			     three different sources at three different versions at the same time. -->
+			<unit id="org.mockito.mockito-core" version="0.0.0"/>
+			<unit id="org.mockito.junit-jupiter" version="0.0.0"/>
+			<unit id="net.bytebuddy.byte-buddy" version="0.0.0"/>
+			<unit id="net.bytebuddy.byte-buddy-agent" version="0.0.0"/>
+			<unit id="org.objenesis" version="0.0.0"/>
+			<!-- Pinned for the same reason as JUnit: the aggregation also carries hamcrest 3.0
+			     under this symbolic name, and moving two major versions is a separate decision.
+			     Note that org.hamcrest.core and org.hamcrest.library are empty shells from 2.x
+			     onwards - they export nothing and only reexport this bundle. -->
+			<unit id="org.hamcrest" version="2.2.0"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
+			<repository location="https://updatesite.mdsd.tools/ecore-workflow/releases/1.2.0/"/>
+			<unit id="tools.mdsd.ecoreworkflow.mwe2lib.feature.feature.group" version="0.0.0"/>
+		</location>
+		<!-- The BPEL designer left the simultaneous release after 2021-12 and the project has
+		     published nothing since, so this is the last release that carries it. The only
+		     location here older than 2025-12. No bundle or feature in the workspace requires
+		     it; it is kept for consumers of this platform outside the workspace, and the
+		     published update site contributes it from the same release independently. -->
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
+			<repository location="https://download.eclipse.org/releases/2021-12/202112081000"/>
+			<unit id="org.eclipse.bpel.feature.feature.group" version="0.0.0"/>
+		</location>
+
+		<!-- ========== Palladio License Feature ========== -->
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
+			<repository location="https://updatesite.palladio-simulator.com/palladio-supporting-branding/releases/5.2.1/"/>
+			<unit id="org.palladiosimulator.branding.feature.feature.group" version="2.0.0"/>
+			<unit id="org.palladiosimulator.branding.feature.source.feature.group" version="2.0.0"/>
+			<unit id="org.palladiosimulator.license.feature.group" version="1.0.0"/>
+			<unit id="org.palladiosimulator.license.epl2.feature.group" version="1.0.0"/>
+		</location>
+	</locations>
+</target>
