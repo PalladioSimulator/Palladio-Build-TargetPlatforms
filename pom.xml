@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.palladiosimulator</groupId>
 	<artifactId>palladio-target-platforms</artifactId>
-	<version>6.0.1-SNAPSHOT</version>
+	<version>6.0.2-SNAPSHOT</version>
 
 	<name>Palladio Maven Tycho Target Platforms</name>
 	<description>Shared target platforms for Tycho-based builds of Palladio.</description>
@@ -33,19 +33,19 @@
 			<organizationUrl>http://www.fzi.de</organizationUrl>
 		</developer>
 	</developers>
-	
+
 	<scm>
 		<connection>scm:git:git://github.com/palladiosimulator/palladio-build-targetplatforms.git</connection>
 		<developerConnection>scm:git:ssh://github.com/palladiosimulator/palladio-build-targetplatforms.git</developerConnection>
 		<url>http://github.com/palladiosimulator/palladio-build-targetplatforms/tree/master</url>
 	</scm>
-	
+
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.sonatype.central</groupId>
 				<artifactId>central-publishing-maven-plugin</artifactId>
-				<version>0.7.0</version>
+				<version>0.11.0</version>
 				<extensions>true</extensions>
 				<configuration>
 					<publishingServerId>central</publishingServerId>
